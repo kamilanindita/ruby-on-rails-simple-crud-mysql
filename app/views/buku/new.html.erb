@@ -1,0 +1,30 @@
+<ul>
+    <li><%= link_to "Buku", controller: "buku", action: "index"%></li>
+</ul>
+<%= form_for @buku, url: {action: :create}  do |f| %>
+    <table>
+        <tr>
+            <td>Penulis</td>
+            <td>: <%= f.text_field :penulis %></td>
+        </tr>
+        <tr>
+            <td>Judul</td>
+            <td>: <%= f.text_field :judul %></td>
+        </tr>
+            <td>Kota</td>
+            <td>: <%= f.text_field :kota %></td>
+        </tr>
+        </tr>
+            <td>Penerbit</td>
+            <td>: <%= f.text_field :penerbit %></td>
+        </tr>
+        </tr>
+            <td>Tahun</td>
+            <td>: <%= f.text_field :tahun %></td>
+        </tr>
+        <tr>
+            <td><%= f.submit  'Simpan' %></td>
+        </tr>
+    </table>
+
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Selamat datang di Ruby On Rails Crud Mysql</h1>
+<%= link_to "Tambah Buku", controller: "buku", action: "new"%>
+
+
+<table> 
+    <tr>
+        <td>Penulis</td>
+        <td>Judul</td>
+        <td>Kota</td>
+        <td>Penerbit</td>
+        <td>Tahun</td>
+        <td>Action</td>
+    </tr>
+    <% @buku.each do |buku| %>  
+    <tr>   
+        <td><%= buku.penulis %></td>   
+        <td><%= buku.judul %></td>
+        <td><%= buku.kota %></td> 
+        <td><%= buku.penerbit %></td>
+        <td><%= buku.tahun %></td>
+        <td><%=link_to "Edit" , buku_edit_path(id:buku.id) %> | <%=link_to "Hapus" , buku_delete_path(id:buku.id) %></td>    
+    </tr>
+    <% end %>  
+</table>  
